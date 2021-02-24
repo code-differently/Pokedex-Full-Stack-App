@@ -1,6 +1,6 @@
 # Pokedex Full Stack App
 
-![pickachu](https://media.giphy.com/media/xuXzcHMkuwvf2/giphy.gif)
+![pickachu](https://media.giphy.com/media/uLnPIWsqIz2aA/giphy.gif)
 
 You'll be creating a pokedex, a place to view info on all the Pokemon
 

@@ -1,8 +1,12 @@
+DROP DATABASE IF EXISTS Pokedex;
+CREATE DATABASE Pokedex;
+
+USE Pokedex;
 
 CREATE TABLE IF NOT EXISTS pokemon (
      pokemonID INT PRIMARY KEY,
      pokemonName VARCHAR(128),
-     sprite VARCHAR(128)
+     sprite TEXT(65535)
 );
 
 
@@ -34,6 +38,6 @@ VALUES
     );
 
 INSERT INTO
-    types (typeID, pokemonType)
+    pokeType (typeID, pokemonType)
 VALUES
     ("1", "grass"); 

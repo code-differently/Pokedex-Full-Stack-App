@@ -1,9 +1,6 @@
 create database pokedex;
 show databases;
 use pokedex;
-show tables;
-
-describe pokemon;
 
 #drop table pokemon;
 
@@ -14,7 +11,8 @@ CREATE TABLE `pokemons` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-describe type;
+describe pokemons;
+
 
 #drop table type;
 CREATE TABLE `types` (
@@ -23,6 +21,7 @@ CREATE TABLE `types` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+describe types;
 
 CREATE TABLE `pokemon_types` (
   `ptid` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
@@ -33,6 +32,6 @@ CREATE TABLE `pokemon_types` (
   primary key(ptid)
 ) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
-
+describe pokemon_types;
+show tables;
 

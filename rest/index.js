@@ -116,6 +116,7 @@ app.get('/', async (req, res) => {
           }
         ))
         pokedex.push(pokeman);  
+        // Add pokemon to database one by one. Use IGNORE to avoid adding duplicates
         let sql4 = `INSERT IGNORE INTO pokemon (id, pokeName, img, pokeType) VALUES ("${pokeman[0].id}", "${pokeman[0].name}", "${pokeman[0].img}", "${pokeman[0].type}")`;
         con.query(sql4, function (err, result) {
           if (err) throw err;

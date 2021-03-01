@@ -1,19 +1,34 @@
+const password = "password" // removed actual password for lab submission
 const express = require('express');
 const app = express();
+const cors = require('cors');
+const mysql = require('mysql');
 const port = 3000;
-let mysql = require('mysql');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.use(cors());
 
 let con = mysql.createConnection({
   host: "localhost",
-  user: "yourusername",
-  password: "yourpassword",
-  database: "mydb"
+  user: "root",
+  password: password,
+  database: "pokedex"
 });
+
+con.connect(err => {
+  if(err) {
+    throw err;
+  }
+  con.query("SELECT * FROM pokemon", (err, result, fields) => {
+    if (err) {
+      throw err;
+    }
+    console.log(result);
+    app.get('/pokedex', async (req, res) => {
+    res.send(result)
+    })
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Listening on http://localhost:${port}/pokedex`)
+})

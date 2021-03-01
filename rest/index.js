@@ -30,7 +30,7 @@ let db = "Pokedex";
 let con = mysql.createConnection({
   host:"localhost",
   user: "root",
-  password: "password"
+  password: "KillEric5050"
 });
 
 // If connection doesn't exist, connect to database, else already connected
@@ -50,12 +50,12 @@ let con = mysql.createConnection({
     console.log("DROP DATABASE=  " + result);
   });
 
-  // Create database if it doesn't exist
-  let sql2 = "CREATE DATABASE IF NOT EXISTS Pokedex";
-  con.query(sql2, function (err, result) {
-    if (err) throw err;
-    console.log("CREATE DATABASE=  " + result);
-  });
+  // // Create database if it doesn't exist
+  // let sql2 = "CREATE DATABASE IF NOT EXISTS Pokedex";
+  // con.query(sql2, function (err, result) {
+  //   if (err) throw err;
+  //   console.log("CREATE DATABASE=  " + result);
+  // });
 
   // Create table in database referencing the database
   let sql3 = "CREATE TABLE IF NOT EXISTS pokemon (id INT NOT NULL PRIMARY KEY, pokeName VARCHAR(128), img TEXT(65535), pokeType VARCHAR(32))";

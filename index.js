@@ -1,11 +1,24 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const apiRouter = require("./rest");
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const app = express();
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+// Body Parser Middleware
+app.use(bodyParser.json());
+app.use(cors());
+app.use(express.static("public"));
+app.use("/api/v2/allPokemon", apiRouter);
+
+/*
+function (req, res) {
+ res.sendFile(path.join(public, "index.html"));
+});
+*/
+
+//Setting up server
+var server = app.listen(process.env.PORT || 4000, function () {
+  var port = server.address().port;
+  console.log("App now running on port", port);
+});

@@ -33,7 +33,7 @@ let con = mysql.createConnection({
   password: "KillEric5050"
 });
 
-
+// If connection doesn't exist, connect to database, else already connected
  if (!con) {
    con.connect (function(err) {
   if (err) throw err;
@@ -43,30 +43,29 @@ let con = mysql.createConnection({
   console.log("----------------------------------------------------------Already Connected to MySQL Database");
   }
 
-
+  // Drop database if it exists
   let sql1 = "DROP DATABASE IF EXISTS Pokedex";
   con.query(sql1, function (err, result) {
     if (err) throw err;
     console.log("DROP DATABASE=  " + result);
   });
 
-  
+  // Create database if it doesn't exist
   let sql2 = "CREATE DATABASE IF NOT EXISTS Pokedex";
   con.query(sql2, function (err, result) {
     if (err) throw err;
     console.log("CREATE DATABASE=  " + result);
   });
 
-
+  // Create table in database referencing the database
   let sql3 = "CREATE TABLE IF NOT EXISTS pokemon (id INT NOT NULL PRIMARY KEY, pokeName VARCHAR(128), img TEXT(65535), pokeType VARCHAR(32))";
+  // Reference the database to create table in
   con.query('CREATE DATABASE IF NOT EXISTS ??', db, function(err, results) {
     if (err) {
       console.log('error in creating database', err);
       return;
     }
-  
     console.log('created a new database');
-  
     con.changeUser({
       database : db
     }, function(err) {
@@ -74,13 +73,11 @@ let con = mysql.createConnection({
         console.log('error in changing database', err);
         return;
       }
-  
       con.query(sql3, function(err) {
         if (err) {
           console.log('error in creating tables', err);
           return;
         }
-  
         console.log('created a new table');
       });
     });
@@ -118,14 +115,6 @@ app.get('/', async (req, res) => {
             type: data.types[0].type.name
           }
         ))
-        // console.log("Pokemon[0].name = "+ pokeman[0].name);
-        // //console.log(typeof(pokeman[0].id));
-        // console.log("Pokemon[0].data.id = " + pokeman[0].id);
-        // console.log("Pokemon[0].data.sprite = " + pokeman[0].img);
-        // console.log("Pokemon[0].data.types[0].type.name = " + pokeman[0].type);
-
-
-        
         pokedex.push(pokeman);  
         let sql4 = `INSERT IGNORE INTO pokemon (id, pokeName, img, pokeType) VALUES ("${pokeman[0].id}", "${pokeman[0].name}", "${pokeman[0].img}", "${pokeman[0].type}")`;
         con.query(sql4, function (err, result) {

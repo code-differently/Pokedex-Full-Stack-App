@@ -30,7 +30,7 @@ let db = "Pokedex";
 let con = mysql.createConnection({
   host:"localhost",
   user: "root",
-  password: "KillEric5050"
+  password: "password"
 });
 
 // If connection doesn't exist, connect to database, else already connected

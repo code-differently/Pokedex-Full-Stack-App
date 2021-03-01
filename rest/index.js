@@ -30,7 +30,7 @@ let db = "Pokedex";
 let con = mysql.createConnection({
   host:"localhost",
   user: "root",
-  password: "KillEric5050"
+  password: "password"
 });
 
 // If connection doesn't exist, connect to database, else already connected
@@ -115,18 +115,13 @@ app.get('/', async (req, res) => {
             type: data.types[0].type.name
           }
         ))
-        pokedex.push(pokeman);  
         // Add pokemon to database one by one. Use IGNORE to avoid adding duplicates
         let sql4 = `INSERT IGNORE INTO pokemon (id, pokeName, img, pokeType) VALUES ("${pokeman[0].id}", "${pokeman[0].name}", "${pokeman[0].img}", "${pokeman[0].type}")`;
         con.query(sql4, function (err, result) {
           if (err) throw err;
           console.log("INSERT INTO pokemon = " + result);
-          
         });
-        con.query ("SELECT * FROM pokemon", function (err, result, fields) {
-          if (err) throw err;
-          console.log("SELECT");
-        });
+        pokedex.push(pokeman); 
         return;
       
       }).catch(function(error) {

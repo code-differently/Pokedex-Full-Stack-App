@@ -1,0 +1,30 @@
+body {
+    font-family: sans-serif, 'Segoe-UI';
+    font-size: 16px;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    max-width: 600px;
+    color: aliceblue;
+    background-color:coral;
+    border: 1px solid aliceblue;
+    border-radius: 5px;
+    padding: 2em;
+}
+
+img {
+    margin: auto;
+    width: 60%;
+}
+
+h1 {
+    text-align: center;
+
+}

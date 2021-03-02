@@ -2,7 +2,7 @@
   "name": "pokedex-app",
   "version": "1.0.0",
   "description": "![pickachu](https://media.giphy.com/media/xuXzcHMkuwvf2/giphy.gif)",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "mocha",
     "start": "node rest/index.js"
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/code-differently/Pokedex-App#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0"
   }
 }

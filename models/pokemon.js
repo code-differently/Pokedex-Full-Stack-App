@@ -8,3 +8,4 @@ module.exports = (sequelize, type) => {
         image: type.STRING
     })
 }
+

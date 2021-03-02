@@ -1,6 +1,6 @@
  const Sequelize = require('Sequelize');
  const fetch = require('node-fetch');
- const PokemonModel = require('./models/pokemon');
+ const Pokemon = require('./rest/index');
 
  const connection = new Sequelize('pokedex', 'root', 'yourpassword', {
     host: 'localhost',
@@ -16,11 +16,16 @@
   connection.query('show tables').then(console.log);
 
 
-  function addPokemonToDb(data){
+  async function addPokemonToDb(data){
     
-    const {name:pokename,id:pokeid,image} = data;
-    
-      connection.query(`INSERT INTO POKEMON (pokename, ID, sprites) VALUES ("${pokename}","${pokeid}","${image}")`);
+    const {name,id,image} = data;
+
+      //connection.query(`INSERT INTO POKEMONS (name, ID, image) VALUES ("${name}","${id}","${image}")`);
+      Pokemon.create({
+            id: `${id}`,
+            name: `${name}`,
+            image: `${image}`
+          }).catch(console.error)
   }
 
 
@@ -39,9 +44,9 @@
       then(res =>res.json()).
       then( ({name,id, sprites:{front_default:image}}) => ({name,id,image}))));
   }
+  
+ getallpokemon(1,67).then(data => data.forEach(addPokemonToDb)).catch(console.error);
 
-  getallpokemon(1,67).then(data => data.forEach(addPokemonToDb)).catch(console.error);
-
-  getallpokemon(69,150).then(data => data.forEach(addPokemonToDb)).catch(console.error);
+  //getallpokemon(69,150).then(data => data.forEach(addPokemonToDb)).catch(console.error);
 
   

@@ -1,13 +1,53 @@
 const express = require('express');
 const cors = require("cors");
-const { Pokemon } = require('./seedDB')
-
+const Sequelize = require('Sequelize');
+const fetch = require('node-fetch');
+//onst { Pokemon } = require('../seedDB')
 const app = express();
 app.use(cors());
-const port = 4000;
+const port = 5000;
+
+const connection = new Sequelize('pokedex', 'root', 'yourpassword', {
+  host: 'localhost',
+  dialect: 'mysql',
+  pool: {
+    max: 10,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
+});
+
+const Pokemon = connection.define('Pokemon', {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true
+  },
+  name: Sequelize.STRING,
+  image: Sequelize.STRING
+})
+
+app.get('/all', (req, res) =>{
+  Pokemon.findall()
+    .then(pokemon => res.json(pokemon))
+    .catch(error => {
+      console.log(error);
+      res.status(404).send(error);
+    })
+})
 
 
-
+connection
+  .sync({
+    //logging: console.log,
+    //force: true
+  })
+  .then(() =>{
+    console.log('Connection Established');
+  })
+  .catch(err =>{
+    console.error('unable to connect: ',err);
+  })
 // app.get('/all/:count', async (req, response) => {
 //   const count = req.params.count;
 //   fetch(`https://pokeapi.co/api/v2/pokemon?limit=${count}&offset=0`)
@@ -29,12 +69,10 @@ const port = 4000;
 //   .catch(err => console.error(err));
 // })
 
-app.get('/all/:count', async (req, res) => {
-  Pokemon.findAll().then(pokemons => res.json(pokemons))
-})
-
 
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
+module.exports = Pokemon;

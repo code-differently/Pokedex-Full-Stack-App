@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemons</title>
+  </head>
+  <body>
+    <div id="pokemonDiv" class="">
+      <div class="pokemon-card <%= pokemon.types[0].type.name%>">
+        <div class="header">
+          <!-- We can get data from server using ejs tags that are: -->
+          <!-- <%= %>  -->
+          <!-- since we passed pokemon with our view, we're using it here to display name and id data. -->
+          <p><%= pokemon.name %></p>
+          <p>#<%= pokemon.id %></p>
+        </div>
+        <div>
+          <!-- we are displaying the pokemon with the img data -->
+          <img src="<%= pokemon.img%>" alt="" />
+        </div>
+      </div>
+      <div class="pokemon-info">
+        <h2>Pokemon Info</h2>
+        <div class="grid">
+          <h3>Name:</h3>
+          <p><%= pokemon.name %></p>
+          <h3>ID:</h3>
+          <p><%= pokemon.id %></p>
+          <h3>Type:</h3>
+          <p><%= pokemon.types[0].type.name %></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    justify-content: space-around;
+  }
+
+  .pokemon-info {
+    width: 200px;
+    /* background-color: black; */
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 50px;
+  }
+  #pokemonDiv {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    justify-content: space-around;
+    text-transform: capitalize;
+  }
+
+  p {
+    margin: auto 0;
+  }
+
+  .header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+  }
+  .pokemon-card {
+    margin: 5px 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 350px;
+    height: 350px;
+  }
+  .pokemon-card img {
+    width: 80%;
+    display: block;
+    margin: auto;
+  }
+
+  .poison {
+    background-color: green;
+  }
+  .electric {
+    background-color: yellow;
+  }
+  .grass {
+    background-color: greenyellow;
+  }
+  .fire {
+    background-color: orangered;
+  }
+  .water {
+    background-color: lightskyblue;
+  }
+  .bug {
+    background-color: purple;
+  }
+  .normal {
+    background-color: #cccccc;
+  }
+</style>

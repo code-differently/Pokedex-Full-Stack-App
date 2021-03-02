@@ -15,13 +15,16 @@ let password = "0507198Four";
 
 let mysql = require('mysql');
 
+async function getData() {
+    let con = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: password,
+        database: "pokedex"
+    });
+};
 
-let con = mysql = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: password,
-    database: "pokedex"
-});
+let data = await new Promise((resolve, reject));
 
 con.connect(err => {
     if (err) {
@@ -32,8 +35,15 @@ con.connect(err => {
             throw err;
         }
         console.log(result);
+        return result;
+        con.end();
     });
 });
+
+
+let data = getData();
+console.log(data);
+
 
 let pokemon_id = 1;
 let name = "Bulbasaur";

@@ -10,11 +10,20 @@ app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
 
-let mysql = require('mysql');
+// app.get('/v3', (req, res) => {
 
-let con = mysql = mysql.createConnection({
-    host: "localhost",
-    user: "pokedex",
-    password: "whatever",
-    database: "pokedex"
-});
+//     let sql = new Sql(`mysql://root:${password}@:3306/sample`);
+
+//     let Users = sql.define('users', {
+//         name:
+//     })
+
+//     Users.findAll()
+//         .then(data => {
+//             console.log(data);
+//             return data
+//         })
+// })
+
+let pokemonID = document.getElementById('pokemonId');
+let

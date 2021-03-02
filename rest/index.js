@@ -7,8 +7,6 @@ const app = express()
 app.use(cors())
 const port = 4000
 
-
-
 app.get('/all/:count', async (req, response) => {
   const count = req.params.count;
   fetch(`https://pokeapi.co/api/v2/pokemon?limit=${count}&offset=0`)

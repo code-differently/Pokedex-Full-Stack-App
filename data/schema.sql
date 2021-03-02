@@ -20,26 +20,3 @@ CREATE TABLE IF NOT EXISTS poke_type (
    type_id INT NOT NULL,
    FOREIGN KEY (type_id) REFERENCES type (type_id)
 );
-
-INSERT INTO pokemon
-(	poke_id,
-   poke_name,
-   poke_sprite
-)
-VALUES
-("0", "bulbasaur", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png");
-
-INSERT INTO type (
-	type_id,
-	type_name
-)
-VALUES
-("0", "https://pokeapi.co/api/v2/type/12/");
-
-INSERT INTO poke_type (
-	poke_type_id,
-   poke_id,
-   type_id
-)
-VALUES
-("0", "0", "0");

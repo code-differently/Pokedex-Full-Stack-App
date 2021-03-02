@@ -23,7 +23,7 @@ const Sequelize = require('sequelize');
 // ();
 
 
-const sequelize = new Sequelize('pokedex', 'root', '@Elle1261', {
+const sequelize = new Sequelize('pokedex', 'root', 'password', {
   host: 'localhost',
   dialect: 'mysql'
 });

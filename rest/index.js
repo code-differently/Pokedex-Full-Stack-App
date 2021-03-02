@@ -1,11 +1,16 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require("express");
+const db = require("../db"); //database
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const router = express.Router();
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+router.get("/", async (req, res, next) => {
+  try {
+    let results = await db.all();
+    res.json(results);
+  } catch (e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
+});
+
+module.exports = router;

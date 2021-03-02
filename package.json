@@ -1,23 +1,27 @@
 {
-  "name": "pokedex-app",
-  "version": "1.0.0",
-  "description": "![pickachu](https://media.giphy.com/media/xuXzcHMkuwvf2/giphy.gif)",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha",
-    "start": "node rest/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/code-differently/Pokedex-App.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/code-differently/Pokedex-App/issues"
-  },
-  "homepage": "https://github.com/code-differently/Pokedex-App#readme",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+    "name": "pokedex-app",
+    "version": "1.0.0",
+    "description": "![pickachu](https://media.giphy.com/media/xuXzcHMkuwvf2/giphy.gif)",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha",
+        "start": "node rest/index2.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/code-differently/Pokedex-App.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/code-differently/Pokedex-App/issues"
+    },
+    "homepage": "https://github.com/code-differently/Pokedex-App#readme",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mysql": "^2.18.1",
+        "mysql2": "^2.2.5",
+        "sequelize": "^6.5.0"
+    }
 }

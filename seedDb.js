@@ -1,7 +1,6 @@
  const Sequelize = require('Sequelize');
  const fetch = require('node-fetch');
-
-const typeMap = ({"fire": 2});
+ const PokemonModel = require('./models/pokemon');
 
  const connection = new Sequelize('pokedex', 'root', 'yourpassword', {
     host: 'localhost',
@@ -13,7 +12,7 @@ const typeMap = ({"fire": 2});
       idle: 10000
     }
   });
-
+  
   connection.query('show tables').then(console.log);
 
 
@@ -44,3 +43,5 @@ const typeMap = ({"fire": 2});
   getallpokemon(1,67).then(data => data.forEach(addPokemonToDb)).catch(console.error);
 
   getallpokemon(69,150).then(data => data.forEach(addPokemonToDb)).catch(console.error);
+
+  

@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const Sequelize = require('sequelize');		
 
 // creating a new connection. Passing db name, user, and password
-const conn = new Sequelize('pokedex', 'root', '@Elle1261', {
+const conn = new Sequelize('pokedex', 'root', 'password', {
     host: 'localhost',
     dialect: 'mysql'
   });

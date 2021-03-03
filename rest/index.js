@@ -9,18 +9,23 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+app.get("/customers", async (req, res) => {
+  let customerData = await getCustomerData();
+  res.send(customerData);
+})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
 
-function getCustomerData(){
+async function getCustomerData(){
 
 
 let con = mysql.createConnection({
   host: "localhost",
-  user: "yourusername",
-  password: "yourpassword",
+  user: "root",
+  password: "password",
   database: "classicmodels"
 });
 
@@ -28,15 +33,12 @@ let con = mysql.createConnection({
 //  if(err) {
  //   throw err;
 //  }
-  con.query("SELECT * FROM customers", (err, result, fields) => { // if error have reject error 
-    if (err){
-        throw err;
-    }
-    console.log(result);
-    con.end();
-  });
-});
-}
+let data = await new Promise((resolve, reject) =>
+  con.query("SELECT * FROM customers", (err, result,field) => { // if error have reject error 
+  (err) ? reject(err) : resolve(result);
 
-let data = getCustomer();
-console.log(data);
+  })
+})
+
+con.end();
+ return data;

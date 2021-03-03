@@ -1,5 +1,5 @@
 const button = document.querySelector("button");
-const inputText = document.querySelector("#numberOfPokemons");
+//const inputText = document.querySelector("#numberOfPokemons");
 const container = document.querySelector(".container");
 
 button.addEventListener("click", () => {

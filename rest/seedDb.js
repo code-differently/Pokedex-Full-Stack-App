@@ -11,10 +11,10 @@
 
   async function addPokemonToDb(data){
     
-    const {name,id,image} = data;
+    const {name,id,image,type} = data;
 
-    connection.query(`INSERT INTO POKEMON (name, ID, image) VALUES ("${name}","${id}","${image}")`);
-    console.log(`INSERT INTO POKEMON (name, ID, image) VALUES ("${name}","${id}","${image}")`);
+    connection.query(`INSERT INTO POKEMON (name, ID, image,type) VALUES ("${name}","${id}","${image}", "${type}")`);
+    console.log(`INSERT INTO POKEMON (name, ID, image, type) VALUES ("${name}","${id}","${image}", "${type}")`);
     
   }
 
@@ -32,7 +32,7 @@
       return Promise.all(range(start,end).
       map(id => fetch(`${endpoint}${id}`).
       then(res =>res.json()).
-      then( ({name,id, sprites:{front_default:image}}) => ({name,id,image}))));
+      then( ({name,id, sprites:{front_default:image}, types: {0:{type:{name: type}}}}) => ({name,id,image, type}))));
   }
   
   //terminal crashes if i made a one time call had to call per 100

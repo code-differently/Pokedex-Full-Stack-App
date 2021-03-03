@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/code-differently/Pokedex-App#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "pokedex-promise-v2": "^3.3.0",
+    "sequelize": "^6.5.0"
   }
 }

@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+  display: grid;
+  margin: 1rem;
+  justify-content: space-evenly;
+  grid-gap: 1.5rem;
+}
+
+.col {
+  grid-template-columns: auto auto auto auto;
+}
+
+.pButton {
+  margin-left: 3rem;
+  margin-bottom: 5rem;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding-bottom: 2rem;
+  border-style: solid;
+}
+
+h4.pName {
+  display: float;
+  float: left;
+  padding-right: 2rem;
+  font-weight: bold;
+}
+
+h4.pNum {
+  display: float;
+  float: right;
+  padding-left: 2rem;
+  font-weight: bold;
+}
+
+.line {
+  height: 1.75rem;
+  border-bottom: 0.1rem solid lightgrey;
+  border-bottom-width: 90%;
+}
+
+/* label {
+    margin-right: 2rem;
+} */
+
+.bug {
+  background-color: #3b9950;
+}
+
+.dark {
+  background-color: #5a5979;
+}
+
+.dragon {
+  background-color: #61cad9;
+}
+
+.electric {
+  background-color: #fbfb71;
+}
+
+.fairy {
+  background-color: #ea1169;
+}
+
+.fighting {
+  background-color: #ef6138;
+}
+
+.fire {
+  background-color: #fd4c59;
+}
+
+.flying {
+  background-color: #93b2c7;
+}
+
+.ghost {
+  background-color: #906790;
+}
+
+.grass {
+  background-color: #26cb4f;
+}
+
+.ground {
+  background-color: #6e491f;
+}
+
+.ice {
+  background-color: #d9eefa;
+}
+
+.normal {
+  background-color: #c998a7;
+}
+
+.poison {
+  background-color: #9b69d8;
+}
+
+.psychic {
+  background-color: #f71c91;
+}
+
+.rock {
+  background-color: #8a3d22;
+}
+
+.steel {
+  background-color: #42bd94;
+}
+
+.water {
+  background-color: #86a9fa;
+}

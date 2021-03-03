@@ -23,9 +23,6 @@ type VARCHAR(255) NOT NULL
     FOREIGN KEY (type_id) REFERENCES types(type_id)
 );
 
-
-
-
 ALTER TABLE pokemon_type ADD FOREIGN KEY(pokemon_id) REFERENCES pokemon(pokemon_id);
 ALTER TABLE pokemon_type ADD FOREIGN KEY(type_id) REFERENCES types(type_id);
 
@@ -77,9 +74,9 @@ VALUES
 (2, 10);
 
 
-SELECT p.name, tp.type, pt.pokemon_type_id
-FROM pokemon p
-LEFT JOIN pokemon_type pt
-ON p.pokemon_id = pt.pokemon_id
-INNER JOIN types tp
-ON tp.type_id = pt.type_id;
+-- SELECT p.name, tp.type, pt.pokemon_type_id
+-- FROM pokemon p
+-- LEFT JOIN pokemon_type pt
+-- ON p.pokemon_id = pt.pokemon_id
+-- INNER JOIN types tp
+-- ON tp.type_id = pt.type_id;

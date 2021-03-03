@@ -1,28 +1,44 @@
-// const express = require('express')
-// const app = express()
-// const port = 3000
+const express = require('express')
+const mysql = require("mysql");
+const cors = require("cors");
+const app = express()
+const port = 3000
 
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
+app.use(cors())
 
-// app.listen(port, () => {
-//   console.log(`Example app listening at http://localhost:${port}`)
-// })
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+  app.get('/pokemon', async (req, res) => {
+    let customerData = await getCustomerData();
+    res.send(customerData);
+  })
 
-const express = require("express");
-const db = require("../db"); //database
+  app.listen(port, () => {
+    console.log (`Example app listening at http://localhost:${port}`)
+  })
 
-const router = express.Router();
 
-router.get("/", async (req, res, next) => {
-  try {
-    let results = await db.all();
-    res.json(results);
-  } catch (e) {
-    console.log(e);
-    res.sendStatus(500);
-  }
-});
+async function getCustomerData(){
 
-module.exports = router;
+  let con = mysql.createConnection ({
+
+  password: "United@2011@",
+  user: "root",
+  database: "pokedex",
+  host: "localhost",
+  });
+
+ let data = await new Promise ((resolve, reject) => {
+    con.query ("SELECT * FROM pokemon", (err, result) => {
+      (err) ? reject(err) : resolve(result);
+
+    })
+
+ })
+con.end();
+
+return data;
+
+}
+

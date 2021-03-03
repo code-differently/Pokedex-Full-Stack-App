@@ -3,7 +3,7 @@
 // let con = mysql = mysql.createConnection({
 //     host: "localhost",
 //     user: "root",
-//     password: javalos45,
+//     password: password,
 //     database: "classicmodels"
 // });
 

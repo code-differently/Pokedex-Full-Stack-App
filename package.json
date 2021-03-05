@@ -2,7 +2,7 @@
   "name": "pokedex-app",
   "version": "1.0.0",
   "description": "![pickachu](https://media.giphy.com/media/xuXzcHMkuwvf2/giphy.gif)",
-  "main": "script.js",
+  "main": "rest/index.js",
   "scripts": {
     "test": "mocha",
     "start": "node rest/index.js"

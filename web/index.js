@@ -4,7 +4,7 @@ const container = document.querySelector(".container");
 
 button.addEventListener("click", () => {
     let input = inputText.value;
-   fetch(`http://localhost:4000/all/${input}`)
+   fetch(`http://localhost:3000/all/${input}`)
      .then((res) => res.json())
      .then((pokemon) => {
 

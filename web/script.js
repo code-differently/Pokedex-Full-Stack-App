@@ -1,13 +1,7 @@
-fetch('http://localhost:3000/customer') //connects with app.get () in rest/index.js file
-  // .then(res => res.json());
-  .then(function (res)
-  {
-    res.json()
-  .then(function (res)
-  {
-    document.getElementById('fetchPokeData').innerHTML = res[3].customerName;
-    // console.log(res);
+
+fetch('http://localhost:3000/customers')
+  .then(res => res.json())
+  // .then(console.log);
+  .then(customerData => {
+    document.getElementById("allCustomers").innerHTML = customerData.map(customer => `<div>${customer.customerNumber}: ${customer.customerName}</div>`).join("")
   });
-    
-  });
-  

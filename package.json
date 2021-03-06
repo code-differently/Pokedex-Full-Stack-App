@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/code-differently/Pokedex-App#readme",
   "dependencies": {
-    "express": "^4.17.1"
-  }
+    "express": "^4.17.1",
+    "sequelize": "^5.22.3"
+  },
+  "keywords": []
 }

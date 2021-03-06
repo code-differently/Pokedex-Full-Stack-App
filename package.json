@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "start": "node rest/index.js"
+    "start": "node rest/json/index-json.js"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,6 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
-    "node-fetch": "^2.6.1",
-    "sequelize": "^6.5.0",
-    "sqlite3": "^5.0.2"
+    "node-fetch": "^2.6.1"
   }
 }

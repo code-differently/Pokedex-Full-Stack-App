@@ -1,24 +1,23 @@
 const mysql = require('mysql');
 const express = require('express');
-const app = express()
-const port = 3000
-
 const fetch = require('node-fetch');
-const cors = require("cors");
-app.use(cors())
+const app = express()
+const port = 5000
+// const cors = require("cors");
+// app.use(cors())
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('#FlyEaglesFly')
 })
 
-app.get("/pokemons",  async (req, res) => {
+app.get("/pokemons", async (req, res) => {
   let pokemonData = await getPokemonData()
   res.send(pokemonData);
 })
 
 
 app.listen(port, () => {
-    console.log(`Example app Listening at http://localhost:${port}`)
+    console.log(`Starting Pokedex app at http://localhost:${port}`)
 })
 
 async function getPokemonData(){
@@ -31,7 +30,7 @@ async function getPokemonData(){
   });
 
   let data =  await new Promise((resolve, reject) => {
-    con.query("SELECT * from pokemon", (err, result, fields) => {
+    con.query("SELECT * from pokemon", (err, result) => {
       (err) ? reject(err): resolve(result);
     })
   })
@@ -39,8 +38,4 @@ async function getPokemonData(){
   con.end();
 
   return data;
-
 }
-
-getPokemonData()
-  .then(console.log)

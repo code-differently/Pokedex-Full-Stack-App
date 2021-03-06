@@ -21,16 +21,17 @@ app.listen(port, () => {
 })
 
 async function getPokedex() {
+
   let con = mysql.createConnection({
-  host:"localhost",
-  user:"root",
-  password: "password",
-  database: "pokedex"
+    host:"localhost",
+    user:"root",
+    password: "password",
+    database: "pokedex"
 });
 
-let data = Await new Promise((resolve, reject) => {
-  con.query("SELECT * FROM pokemon", (err, result) => {
-  (err) ? reject(err):resolve(result);
+  let data = Await new Promise((resolve, reject) => {
+     con.query("SELECT * FROM pokemon", (err, result) => {
+     (err) ? reject(err):resolve(result);
 })
 
 })
@@ -43,4 +44,4 @@ return data;
 
 getPokedex().then(console.log);
 
-
+}

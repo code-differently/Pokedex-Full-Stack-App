@@ -19,3 +19,7 @@ CREATE TABLE pokemon_type (
     pokemon_id INT NOT NULL,
 
 );
+
+SELECT * FROM Pokemon;
+SELECT * FROM Types;
+SELECT * FROM pokemon_type;

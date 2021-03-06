@@ -31,7 +31,7 @@ const displayPokemon = (pokemon) => {
 
   const pokemonHTMLString = pokemon.map( pokeman => `
    <li class="card"> 
-      <h2>${pokeman.name}  <span>#${pokeman.id}</span></h2>
+      <h2 class="card-header"><span>${pokeman.name}</span> <span>#${pokeman.id}</span></h2>
       <img card="card-title" src="${pokeman.url}"/>
       
       <p class="card-subtitle">Type: </p>

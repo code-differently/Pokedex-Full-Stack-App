@@ -1,21 +1,21 @@
+CREATE DATABASE pokedex;
 USE pokedex;
 
 CREATE TABLE pokemon(
-	pokeid INT PRIMARY KEY,
-	name VARCHAR(20),
-	img VARCHAR(266)
+	id INT PRIMARY KEY,
+	name VARCHAR(256),
+	img VARCHAR(50)
 );
 
 CREATE TABLE types(
-	pokeid INT ,
-	typeid INT PRIMARY KEY,
-	typeName VARCHAR(266)
+	id INT PRIMARY KEY NOT NULL, 
+	name VARCHAR(32)
 );
 
 CREATE TABLE mapping(
-	mappingid INT PRIMARY KEY AUTO_INCREMENT,
-	pokeid INT,
-	typeid INT,
-    FOREIGN KEY (pokeid) REFERENCES pokemon(pokeid),
-    FOREIGN KEY (typeid) REFERENCES types(typeid)
+	id INT PRIMARY KEY  NOT NULL AUTO_INCREMENT,
+	pokeId INT NOT NULL,
+	FOREIGN KEY (pokeId) REFERENCES pokemon(id),
+	typeId INT NOT NULL,
+    FOREIGN KEY (typeId) REFERENCES types(id)
 );

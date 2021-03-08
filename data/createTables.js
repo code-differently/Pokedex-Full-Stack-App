@@ -4,7 +4,7 @@ const con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "password",
-  database: "pokedex"
+  database: "pokedex3"
 });
 
 con.connect(function(err) {
@@ -15,7 +15,7 @@ con.connect(function(err) {
     if (err) throw err;
     console.log("pokemon table created...");
   });
-});
+}),
 
 con.connect(function(err) {
     if (err) throw err;
@@ -25,7 +25,7 @@ con.connect(function(err) {
       if (err) throw err;
       console.log("types table created...");
     });
-});
+}),
 
 con.connect(function(err) {
     if (err) throw err;

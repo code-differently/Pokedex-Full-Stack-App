@@ -4,16 +4,17 @@ const container = document.querySelector(".container");
 
 button.addEventListener("click", () => {
     let input = inputText.value;
-   fetch(`http://localhost:4000/all/${input}`)
+    fetch(`http://localhost:4000/pokedex`)
+  //  fetch(`http://localhost:4000/all/${input}`)
      .then((res) => res.json())
      .then((pokemon) => {
      
-      pokemon.map(i =>showPokemon(i.id, i.name, i.type, i.image));
+      pokemon.map(i =>showPokemon(i.id, i.name, i.type, i.img));
        
      });
  });
 
-function showPokemon(id, name, type, image){
+function showPokemon(id, name, type, img){
   
   let div = document.createElement('div');
   let divInnerHtml = 
@@ -24,7 +25,7 @@ function showPokemon(id, name, type, image){
       <h4 class="pNum">#${id}</h4>
       <div class="line"></div>
     </div>
-    <img src="${image}";
+    <img src="${img}";
   </div>
 </div>`
   div.innerHTML = divInnerHtml;

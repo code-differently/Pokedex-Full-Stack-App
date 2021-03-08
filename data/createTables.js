@@ -3,14 +3,14 @@ const mysql = require('mysql');
 const con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "password",
-  database: "pokedex3"
+  password: "*****",
+  database: "pokedex"
 });
 
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  let sql = "CREATE TABLE pokemon( pokeid INT PRIMARY KEY, name VARCHAR(20),img VARCHAR(266))";
+  let sql = "CREATE TABLE pokemon(id INT PRIMARY KEY NOT NULL,name VARCHAR(50),img VARCHAR(256))";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("pokemon table created...");
@@ -20,7 +20,7 @@ con.connect(function(err) {
 con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
-    let sql = "CREATE TABLE types(pokeid INT,typeid INT PRIMARY KEY,typeName VARCHAR(266))";
+    let sql = "CREATE TABLE type(id INT PRIMARY KEY NOT NULL,name VARCHAR(32))";
     con.query(sql, function (err, result) {
       if (err) throw err;
       console.log("types table created...");
@@ -30,7 +30,7 @@ con.connect(function(err) {
 con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
-    let sql = "CREATE TABLE mapping(mappingid INT PRIMARY KEY AUTO_INCREMENT, pokeid INT, typeid INT, FOREIGN KEY (pokeid) REFERENCES pokemon(pokeid),FOREIGN KEY (typeid) REFERENCES types(typeid))";
+    let sql = "CREATE TABLE poke_type(id INT PRIMARY KEY AUTO_INCREMENT,pokeId INT NOT NULL,typeId INT NOT NULL,FOREIGN KEY (pokeId) REFERENCES pokemon(id),FOREIGN KEY (typeId) REFERENCES type(id))";
     con.query(sql, function (err, result) {
       if (err) throw err;
       console.log("mapping table created...");

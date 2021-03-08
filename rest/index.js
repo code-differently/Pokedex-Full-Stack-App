@@ -22,7 +22,7 @@ async function getPokemonData() {
   let con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "password" /*remove b4 uploading to gitHub*/,
+    password: "password",
     database: "Pokedex",
   });
 
@@ -37,11 +37,31 @@ async function getPokemonData() {
   return data;
 }
 
-async function LoadPokemonData() {
+async function getFromAPI() {
+  let promises = [];
+
+  for (let i = 1; i <= 151; i++) {
+    let response = axios.get(`https://pokeapi.co/api/v2/pokemon${i}`);
+    promises.push(response);
+  }
+
+  let responses = await Promise.all(promise);
+
+  return responses
+    .map((response) => response.data)
+    .map((data) => ({
+      id: data.id,
+      name: data.name,
+      types: data.types.map((type) => type.type.name),
+      img: data.sprites["other"]["official-artwork"]["front_default"],
+    }));
+}
+
+async function loadPokemonData() {
   let con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "password" /*remove b4 uploading to gitHub*/,
+    password: "password",
     database: "Pokedex",
   });
 

@@ -27,7 +27,7 @@ async function getPokemonData(){
     const con = mysql.createConnection({
       host: "localhost",
       user: "root",
-      password: "linux5All##",
+      password: "password",
       database: "pokedex"
     });
   

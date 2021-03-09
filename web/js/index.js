@@ -1,7 +1,4 @@
-const button = document.querySelector("button");
-const inputText = document.querySelector("#numberOfPokemons");
 const container = document.querySelector(".container");
-
 
 function fetchPokemon() { 
     fetch(`http://localhost:4000/pokedex`)
@@ -13,8 +10,7 @@ function fetchPokemon() {
      });
  };
 
-function showPokemon(id, name, type, img){
-  
+function showPokemon(id, name, type, img){ 
     let div = document.createElement('div');
     let divInnerHtml = 
     `<div class="card">  

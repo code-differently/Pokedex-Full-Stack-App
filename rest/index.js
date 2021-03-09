@@ -8,7 +8,6 @@ const app = express()
 app.use(cors())
 const port = 4000
 
-
 app.get('/', (req, res) => {
     res.send('#FlyEaglesFly')
 })
@@ -16,7 +15,7 @@ app.get('/', (req, res) => {
 app.get("/pokedex", async (req, res) => {
     let pokemonData = await getPokemonData()
     res.send(pokemonData);
-  })
+})
   
   app.listen(port, () => {
     console.log(`Starting Pokedex app at http://localhost:${port}`)
@@ -27,7 +26,7 @@ async function getPokemonData(){
     const con = mysql.createConnection({
       host: "localhost",
       user: "root",
-      password: "password",
+      password: "linux5All##",
       database: "pokedex"
     });
   
@@ -41,8 +40,6 @@ async function getPokemonData(){
   
     return data;
 }
-
-
 
 async function getFromAPI(){
     let promises = []
@@ -67,7 +64,7 @@ async function loadDatabase(){
     let con = mysql.createConnection({
         host: "localhost",
         user: "root", 
-        password: "linux5All##", 
+        password: "password", 
         database: "pokedex"
     });
 
@@ -94,7 +91,7 @@ async function loadDatabase(){
     // Insert data into type table
 
     for(let i = 0; i < uniqueTypes.length; i++){
-        con.query(`INSERT INTO type(id, name) VALUES (${i+1}, "${uniqueTypes[i]}");`)
+        con.query(`INSERT INTO types(id, name) VALUES (${i+1}, "${uniqueTypes[i]}");`)
     }
 
     // Insert data into poke_type junction table

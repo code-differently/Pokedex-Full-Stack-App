@@ -1,37 +1,48 @@
-body{
-    background-color: #de6f21;
-    margin: 0px;
+body {
+  background-color: #de6f21;
+  margin: 0px;
 }
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
-.card-header{
-    display: grid;
-    grid-template-columns:2fr 1fr ;
-    border-bottom-color: grey;
-    border-bottom-style: solid;
-    border-bottom-width: 10px;
-    
-}
-
-.card{
-    list-style: none;
-    padding: 0px;
-    background-color: #f4f4f4;
-    color:#222;
-    margin: 0px;
+.card-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-bottom-color: grey;
+  border-bottom-style: solid;
+  border-bottom-width: 10px;
 }
 
-.card-title{
-    text-transform: uppercase;
-    font-size: 32px;
-    font-weight: normal;
+.card {
+  list-style: none;
+  padding: 0px;
+  background-color: #f4f4f4;
+  color: #222;
+  margin: 0px;
 }
-#pokedex{
-    padding-inline-start: 0;
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) ;
-    grid-gap: 20px;
-    margin:5px;
+
+.card-image {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: normal;
+  width: 50%;
+  height: 50%;
+  margin: 20px;
+  padding: 20px;
+}
+#pokedex {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+  margin: 5px;
+}
+.right {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.left{
+    padding-left: 20px;
 }

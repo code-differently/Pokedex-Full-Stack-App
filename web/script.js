@@ -5,7 +5,6 @@ let pokedex = document.getElementById("pokedex");
 
 const xhr = new XMLHttpRequest();
 
-
 // listen for `onload` event
 xhr.onload = () => {
   // process response
@@ -13,8 +12,8 @@ xhr.onload = () => {
     // parse JSON data
 
     let pokemonDatas = JSON.parse(xhr.response);
-    
-     displayPokemon(pokemonDatas);
+
+    displayPokemon(pokemonDatas);
   } else {
     console.error("Error!");
   }
@@ -29,17 +28,18 @@ xhr.send();
 const displayPokemon = (pokemon) => {
   console.log("In displayPokemon" + pokemon);
 
-  const pokemonHTMLString = pokemon.map( pokeman => `
+  const pokemonHTMLString = pokemon
+    .map(
+      (pokeman) => `
    <li class="card"> 
-      <h2 class="card-header"><span>${pokeman.name}</span> <span>#${pokeman.id}</span></h2>
-      <img card="card-title" src="${pokeman.url}"/>
-      
-      <p class="card-subtitle">Type: </p>
+      <h2 class="card-header"><span class="left">${pokeman.name}</span> <span class="right">#${pokeman.id}</span></h2>
+      <img class="card-image" src="${pokeman.url}"/>
+      <p>Type: ${pokeman.TypeName}</p>
+       
    </li>
   `
-  ).join('')
-  
+    )
+    .join("");
+
   pokedex.innerHTML = pokemonHTMLString;
-
-}
-
+};

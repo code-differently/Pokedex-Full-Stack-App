@@ -9,7 +9,7 @@ body {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 6rem;
     margin-top: 3rem;
     margin-bottom: 10rem;
     text-align: center;
@@ -38,32 +38,6 @@ h1 {
     grid-template-columns: auto auto auto auto;
 }
 
-/* .pButton {
-   margin-left: 3rem;
-   margin-bottom: 5rem;
-} */
-
-/* button {
-    background-image: linear-gradient(130deg,lightgray,black);
-    padding: .1rem;
-    color: white;
-}
-
-button:hover {
-    cursor:pointer;
-    background-image: linear-gradient(130deg, black,lightgray);
-    color:white;
-  }
-
-input {
-    text-align: right; 
-    max-width: 4rem; 
-    padding-right: .25rem; 
-    border-style: solid;
-    border-radius: 3%;
-    font-weight:bold;
-    padding: .1rem;
-} */
 
 /* Card Properties */
 .card {

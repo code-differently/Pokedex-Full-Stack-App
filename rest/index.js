@@ -32,7 +32,7 @@ async function getPokemonData(){
     });
   
     let data =  await new Promise((resolve, reject) => {
-      con.query("SELECT * from pokemon", (err, result, fields) => {
+      con.query("SELECT pokemon.ID AS id, name,types.type, img FROM pokemon join poke_type on pokemon.id = poke_type.pokeId join types on poke_type.typeId = types.id order by pokeId;", (err, result, fields) => {
         (err) ? reject(err): resolve(result);
       })
     })

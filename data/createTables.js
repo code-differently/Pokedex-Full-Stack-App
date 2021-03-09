@@ -20,7 +20,7 @@ con.connect(function(err) {
 con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
-    let sql = "CREATE TABLE type(id INT PRIMARY KEY NOT NULL,name VARCHAR(32))";
+    let sql = "CREATE TABLE types(id INT PRIMARY KEY NOT NULL,name VARCHAR(32))";
     con.query(sql, function (err, result) {
       if (err) throw err;
       console.log("types table created...");

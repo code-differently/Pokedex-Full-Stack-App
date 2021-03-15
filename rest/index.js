@@ -1,4 +1,4 @@
-const password = "password" // removed actual password for lab submission
+const password = "************" // removed actual password for lab submission
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -14,17 +14,19 @@ let con = mysql.createConnection({
   database: "pokedex"
 });
 
-con.connect(err => {
-  if(err) {
-    throw err;
-  }
-  con.query("SELECT * FROM pokemon", (err, result, fields) => {
-    if (err) {
+app.get('/pokedex', async (req, res) => {
+  con.connect(err => {
+    if(err) {
       throw err;
     }
-    console.log(result);
-    app.get('/pokedex', async (req, res) => {
-    res.send(result)
+    con.query("SELECT * FROM pokemon", (err, result, fields) => {
+      if (err) {
+        throw err;
+      }
+      //console.log(result);
+      res.send(result)
+      con.end(); // ends the connection after querry request
+      //return result;
     })
   });
 });

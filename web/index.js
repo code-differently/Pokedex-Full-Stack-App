@@ -42,3 +42,12 @@ xhr.onreadystatechange = function(){
 }
 
 xhr.send();
+
+
+    // const renderData = (data) => {
+    //     document.getElementById("pokemon").innerHTML = data.map(getHtml).join("");
+    // }
+    
+    // const getHtml = ({pokeName, id, img, pokeType}) => {
+    //     return `<div><h1>${pokeName}, ${id}, ${pokeType}</h1><img src="${img}"></div>`
+    // }

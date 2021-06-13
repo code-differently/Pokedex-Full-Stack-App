@@ -1,7 +1,7 @@
 const container = document.querySelector(".container");
 
 function fetchPokemon() { 
-    fetch(`http://localhost:4000/pokedex`)
+    fetch(`http://localhost:5000/pokedex`)
      .then((res) => res.json())
      .then((pokemon) => {
      

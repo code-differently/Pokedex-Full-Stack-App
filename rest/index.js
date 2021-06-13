@@ -6,7 +6,7 @@ const axios = require("axios");
 
 const app = express()
 app.use(cors())
-const port = 4000
+const port = 5000
 
 app.get('/', (req, res) => {
     res.send('#FlyEaglesFly')
@@ -26,7 +26,7 @@ async function getPokemonData(){
     const con = mysql.createConnection({
       host: "localhost",
       user: "root",
-      password: "password",
+      password: "linux5All##",
       database: "pokedex"
     });
   
@@ -105,3 +105,4 @@ async function loadDatabase(){
 
     con.end();     
 }
+

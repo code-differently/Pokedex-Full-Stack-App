@@ -1,0 +1,23 @@
+
+
+.card {
+    margin: 3% auto;
+    border: 2px black solid;
+    padding: 3%;
+}
+
+img {
+    height: 250px;
+    width: 250px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 5%
+} 
+
+h4 {
+    display: grid;
+    grid-template-columns: auto auto;
+} 

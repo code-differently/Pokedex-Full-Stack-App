@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    background-color: rgb(248, 242, 242);
+}
+
+h1 {
+    font-size: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+    text-align: center;
+    text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+}
+
+.container {
+    display: grid;
+    margin:1rem;
+    justify-content: space-evenly;
+    grid-gap: 1.5rem;
+}
+
+.col {
+    grid-template-columns: auto auto auto auto;
+}
+
+
+/* Card Properties */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    padding: 1rem;
+    border-style:solid;
+    border-radius:0%;
+}
+
+h4.pName {
+    display: float;
+    float: left;
+    padding-right: 2rem;
+    font-weight: bold;
+}
+
+h4.pNum {
+    display: float;
+    float: right;
+    padding-left: 2rem;
+    font-weight: bold;  
+}
+
+.line {
+    height: 1.75rem;
+    border-bottom: .1rem inset lightgrey;
+    border-bottom-width: 90%;
+}
+img {
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 12rem;
+}
+
+/* Card Background colors bases on Pokemon Types */
+.bug { 
+    background-color: #3b9950;
+    border-radius:0%;
+}
+
+.dark { 
+    background-color: #5a5979;
+    border-radius:0%; 
+}
+
+.dragon { 
+    background-color: #61cad9;
+    border-radius:0%; 
+}
+
+.electric  {
+    background-color: #fbfb71;
+    border-radius:0%; 
+}
+
+.fairy { 
+    background-color: #ea1169;
+    border-radius:0%; 
+}
+
+.fighting  {
+    background-color: #ef6138;
+    border-radius:0%; 
+}
+
+
+.fire  {
+    background-color: #fd4c59;
+    border-radius:0%; 
+}
+
+.flying  {
+    background-color: #93b2c7;
+    border-radius:0%; 
+}
+
+.ghost  {
+    background-color: #906790;
+    border-radius:0%; 
+}
+
+.grass  {
+    background-color: #26cb4f; 
+    border-radius:0%;
+}
+
+.ground  {
+    background-color: #6e491f;
+    border-radius:0%; 
+}
+
+.ice  {
+    background-color: #d9eefa;
+    border-radius:0%; 
+}
+
+.normal  {
+    background-color: #c998a7;
+    border-radius:0%; 
+}
+
+.poison { 
+    background-color: #9b69d8;
+    border-radius:0%; 
+}
+
+.psychic  {
+    background-color: #f71c91;
+    border-radius:0%; 
+}
+
+.rock  {
+    background-color: #8a3d22;
+    border-radius:0%; 
+}
+
+.steel { 
+    background-color: #42bd94;
+    border-radius:0%; 
+}
+
+.water { 
+    background-color: #86a9fa;
+    border-radius:0%; 
+};
